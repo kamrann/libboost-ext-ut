@@ -9,3 +9,4 @@ package-description-file: PACKAGE-README.md
 url: https://github.com/boost-ext/ut
 depends: * build2 >= 0.16.0
 depends: * bpkg >= 0.16.0
+requires: c++20
