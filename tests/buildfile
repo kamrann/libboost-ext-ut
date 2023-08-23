@@ -5,8 +5,8 @@ import libs = libut%lib{ut}
 ./: exe{functional-tests}
 
 exe{unit-tests}: ut/{hxx ixx txx cxx}{**} $libs
+exe{functional-tests}: ft/{hxx ixx txx cxx}{**} $libs
 
 # Build options.
 #
 cxx.poptions =+ "-I$src_base/ft/include"
-exe{functional-tests}: ft/{hxx ixx txx cxx}{**} $libs
