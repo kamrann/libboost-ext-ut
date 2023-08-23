@@ -6,7 +6,7 @@ lib{ut}: {hxx ixx txx cxx}{**} $impl_libs $intf_libs
 
 # Build options.
 #
-cxx.poptions =+ "-I$out_base" "-I$src_base"
+cxx.poptions =+ "-I$out_base" "-I$src_base" -DBOOST_UT_DISABLE_MODULE
 
 # Export options.
 #
