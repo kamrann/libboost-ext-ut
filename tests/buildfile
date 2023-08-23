@@ -1,12 +1,12 @@
-./: {*/ -build/}
-
 import libs = libut%lib{ut}
 
 # See: https://github.com/boost-ext/ut/issues/548
-./ut/: exe{unit-tests}: include = ($cxx.target.system != 'win32-msvc')
+./: exe{unit-tests}: include = ($cxx.target.system != 'win32-msvc')
+./: exe{functional-tests}
+
 exe{unit-tests}: ut/{hxx ixx txx cxx}{**} $libs
-./ft/: exe{functional-tests}: ft/{hxx ixx txx cxx}{**} $libs
 
 # Build options.
 #
 cxx.poptions =+ "-I$src_base/ft/include"
+exe{functional-tests}: ft/{hxx ixx txx cxx}{**} $libs
