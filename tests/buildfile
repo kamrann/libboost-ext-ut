@@ -1,4 +1,4 @@
-import libs = libut%lib{ut}
+import libs = libboost-ext-ut%lib{ut}
 
 # See: https://github.com/boost-ext/ut/issues/548
 ./: exe{unit-tests}: include = ($cxx.target.system != 'win32-msvc')

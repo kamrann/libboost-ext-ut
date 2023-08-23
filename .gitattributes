@@ -18,6 +18,6 @@
 #
 #*.png binary
 
-libut/boost symlink=dir
+libboost-ext-ut/boost symlink=dir
 tests/ut symlink=dir
 tests/ft symlink=dir

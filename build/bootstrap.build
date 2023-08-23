@@ -1,4 +1,4 @@
-project = libut
+project = libboost-ext-ut
 
 using version
 using config

@@ -1,6 +1,6 @@
 $out_root/
 {
-  include libut/
+  include libboost-ext-ut/
 }
 
-export $out_root/libut/$import.target
+export $out_root/libboost-ext-ut/$import.target

@@ -25,7 +25,7 @@ if $version.pre_release
 else
   lib{ut}: bin.lib.version = "-$version.major.$version.minor"
 
-# Install into the libut/ subdirectory of, say, /usr/include/
+# Install into the libboost-ext-ut/ subdirectory of, say, /usr/include/
 # recreating subdirectories.
 #
 boost/{hxx ixx txx}{*}:

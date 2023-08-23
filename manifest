@@ -1,5 +1,5 @@
 : 1
-name: libut
+name: libboost-ext-ut
 version: 1.1.9-a.0.z
 language: c++
 summary: C++ single header/single module, macro-free μ(micro)/Unit Testing Framework

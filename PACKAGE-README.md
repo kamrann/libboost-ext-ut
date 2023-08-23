@@ -9,11 +9,11 @@ The packaging code is licensed under the MIT License, the upstream artifacts are
 You can simply add this package as dependency to your project by specifying it in your `manifest`:
 
 ```
-depends: libut ^1.1.9
+depends: libboost-ext-ut ^1.1.9
 ```
 
 Then just pick the targets that you need:
 
 ```
-import libs  = libut%lib{ut}
+import libs  = libboost-ext-ut%lib{ut}
 ```
