@@ -16,6 +16,16 @@ lib{ut}:
   cxx.export.libs = $intf_libs
 }
 
+# See: https://github.com/boost-ext/ut/blob/bf8388f61103571dee3061a4ef23292a320d9dbf/CMakeLists.txt#L101-L113
+switch $cxx.target
+{
+  case 'wasm32-emscripten'
+  {
+    cxx.export.coptions = -fwasm-exceptions -g
+    cxx.export.loptions = "SHELL:-s ALLOW_MEMORY_GROWTH=1" "SHELL:-s EXIT_RUNTIME=1"
+  }
+}
+
 # For pre-releases use the complete version to make sure they cannot be used
 # in place of another pre-release or the final version. See the version module
 # for details on the version.* variable values.
