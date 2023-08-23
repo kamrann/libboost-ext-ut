@@ -2,9 +2,7 @@ intf_libs = # Interface dependencies.
 impl_libs = # Implementation dependencies.
 #import xxxx_libs += libhello%lib{hello}
 
-lib{ut}: {hxx ixx txx cxx}{** -version} hxx{version} $impl_libs $intf_libs
-
-hxx{version}: in{version} $src_root/manifest
+lib{ut}: {hxx ixx txx cxx}{**} $impl_libs $intf_libs
 
 # Build options.
 #
@@ -30,8 +28,8 @@ else
 # Install into the libut/ subdirectory of, say, /usr/include/
 # recreating subdirectories.
 #
-{hxx ixx txx}{*}:
+boost/{hxx ixx txx}{*}:
 {
-  install         = include/libut/
+  install         = include/boost/
   install.subdirs = true
 }
