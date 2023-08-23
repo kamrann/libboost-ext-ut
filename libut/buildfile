@@ -6,25 +6,17 @@ lib{ut}: {hxx ixx txx cxx}{** -version} hxx{version} $impl_libs $intf_libs
 
 hxx{version}: in{version} $src_root/manifest
 
-hxx{export}@./: cxx.importable = false
-
 # Build options.
 #
-cxx.poptions =+ "-I$out_root" "-I$src_root"
-
-{hbmia obja}{*}: cxx.poptions += -DLIBUT_STATIC_BUILD
-{hbmis objs}{*}: cxx.poptions += -DLIBUT_SHARED_BUILD
+cxx.poptions =+ "-I$out_base" "-I$src_base"
 
 # Export options.
 #
 lib{ut}:
 {
-  cxx.export.poptions = "-I$out_root" "-I$src_root"
+  cxx.export.poptions = "-I$out_base" "-I$src_base" -DBOOST_UT_DISABLE_MODULE
   cxx.export.libs = $intf_libs
 }
-
-liba{ut}: cxx.export.poptions += -DLIBUT_STATIC
-libs{ut}: cxx.export.poptions += -DLIBUT_SHARED
 
 # For pre-releases use the complete version to make sure they cannot be used
 # in place of another pre-release or the final version. See the version module
