@@ -1,0 +1,3 @@
+import libs = libut%lib{ut}
+
+exe{driver}: {hxx ixx txx cxx}{**} $libs testscript{**}

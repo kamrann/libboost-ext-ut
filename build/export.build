@@ -1,0 +1,6 @@
+$out_root/
+{
+  include libut/
+}
+
+export $out_root/libut/$import.target
