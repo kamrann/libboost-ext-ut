@@ -30,6 +30,8 @@ else
 #
 boost/{hxx ixx txx}{*}:
 {
-  install         = include/boost/
+  install         = include/boost-ext/boost/
   install.subdirs = true
 }
+# Adjust pkg-config
+cxx.pkgconfig.include = include/boost-ext/
