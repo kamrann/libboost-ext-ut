@@ -4,8 +4,7 @@ import libs = libboost-ext-ut%lib{ut}
 ./: exe{unit-tests}
 ./: exe{functional-tests}
 
-exe{unit-tests}: ut/{hxx ixx txx cxx}{** -win_compat_test} $libs
-exe{unit-tests}: ut/{cxx}{win_compat_test}: include = ($cxx.target.class == 'windows')
+exe{unit-tests}: ut/{hxx ixx txx cxx}{**} $libs
 exe{functional-tests}: ft/{hxx ixx txx cxx}{**} $libs
 
 # Build options.
