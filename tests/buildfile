@@ -1,10 +1,11 @@
 import libs = libboost-ext-ut%lib{ut}
 
-# See: https://github.com/boost-ext/ut/issues/548
-./: exe{unit-tests}: include = ($cxx.target.system != 'win32-msvc')
+# For msvc, see: https://github.com/boost-ext/ut/issues/548
+./: exe{unit-tests}
 ./: exe{functional-tests}
 
-exe{unit-tests}: ut/{hxx ixx txx cxx}{**} $libs
+exe{unit-tests}: ut/{hxx ixx txx cxx}{** -win_compat_test} $libs
+exe{unit-tests}: ut/{cxx}{win_compat_test}: include = ($cxx.target.class == 'windows')
 exe{functional-tests}: ft/{hxx ixx txx cxx}{**} $libs
 
 # Build options.
