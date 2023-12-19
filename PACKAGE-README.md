@@ -9,7 +9,7 @@ The packaging code is licensed under the MIT License, the upstream artifacts are
 You can simply add this package as dependency to your project by specifying it in your `manifest`:
 
 ```
-depends: libboost-ext-ut ^1.1.9
+depends: libboost-ext-ut ^2.0.1
 ```
 
 Then just pick the targets that you need:
