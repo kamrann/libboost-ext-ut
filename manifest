@@ -1,12 +1,16 @@
 : 1
 name: libboost-ext-ut
 version: 2.0.1-a.0.z
+type: lib
 language: c++
 summary: C++ single header/single module, macro-free μ(micro)/Unit Testing Framework
 license: BSL-1.0 ; Boost Software License 1.0.
+topics: C++, Boost, testing
 description-file: README.md
 package-description-file: PACKAGE-README.md
 url: https://github.com/boost-ext/ut
+package-url: https://github.com/boost-ext/ut
+package-email: packaging@build2.org ; Mailing list.
 depends: * build2 >= 0.16.0
 depends: * bpkg >= 0.16.0
 requires: c++20
