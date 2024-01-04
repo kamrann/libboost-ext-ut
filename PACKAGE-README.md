@@ -15,5 +15,5 @@ depends: libboost-ext-ut ^2.0.1
 Then just pick the targets that you need:
 
 ```
-import libs  = libboost-ext-ut%lib{ut}
+import libs  = libboost-ext-ut%lib{boost-ext-ut}
 ```

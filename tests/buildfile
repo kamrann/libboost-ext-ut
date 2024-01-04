@@ -1,4 +1,4 @@
-import libs = libboost-ext-ut%lib{ut}
+import libs = libboost-ext-ut%lib{boost-ext-ut}
 
 ./: exe{unit-tests}: ut/{hxx ixx txx cxx}{** -win_compat_test.cpp} $libs
 exe{win-compat-tests}: ut/{cxx}{win_compat_test.cpp} $libs
