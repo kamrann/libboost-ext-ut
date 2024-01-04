@@ -1,4 +1,5 @@
 : 1
+project: boost-ext
 name: libboost-ext-ut
 version: 2.0.1+1
 type: lib
