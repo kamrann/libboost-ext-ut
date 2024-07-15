@@ -8,6 +8,7 @@ using cxx
 
 hxx{*}: extension = hpp
 ixx{*}: extension = ixx
+mxx{*}: extension = hpp
 txx{*}: extension = txx
 cxx{*}: extension = cpp
 

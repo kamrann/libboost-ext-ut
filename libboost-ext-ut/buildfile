@@ -2,17 +2,20 @@ intf_libs = # Interface dependencies.
 impl_libs = # Implementation dependencies.
 #import xxxx_libs += libhello%lib{hello}
 
-lib{boost-ext-ut}: {hxx ixx txx cxx}{**} $impl_libs $intf_libs
+lib{boost-ext-ut}: hxx{**} $impl_libs $intf_libs
+lib{boost-ext-ut}: mxx{**}: include = ($cxx.features.modules == true)
+
+modules_poption = ($cxx.features.modules == false ? -DBOOST_UT_DISABLE_MODULE : )
 
 # Build options.
 #
-cxx.poptions =+ "-I$out_base" "-I$src_base" -DBOOST_UT_DISABLE_MODULE
+cxx.poptions =+ "-I$out_base" "-I$src_base" $modules_poption
 
 # Export options.
 #
 lib{boost-ext-ut}:
 {
-  cxx.export.poptions = "-I$out_base" "-I$src_base" -DBOOST_UT_DISABLE_MODULE
+  cxx.export.poptions = "-I$out_base" "-I$src_base" $modules_poption
   cxx.export.libs = $intf_libs
 }
 
@@ -28,7 +31,7 @@ else
 # Install into the libboost-ext-ut/ subdirectory of, say, /usr/include/
 # recreating subdirectories.
 #
-boost/{hxx ixx txx}{*}:
+boost/{hxx mxx}{*}:
 {
   install         = include/boost-ext/boost/
   install.subdirs = true
