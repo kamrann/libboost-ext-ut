@@ -8,3 +8,7 @@ exe{win-compat-tests}: ut/{cxx}{win_compat_test.cpp} $libs
 # Build options.
 #
 cxx.poptions =+ "-I$src_base/ft/include"
+
+# Workaround for the fact that upstream does not appear to yet have refactored the tests to support modules,
+# so even if we've built lib{boost-ext-ut} as a module, we need to override the inherited poption to consume it as a header.
+cxx.poptions += "-DBOOST_UT_DISABLE_MODULE"
