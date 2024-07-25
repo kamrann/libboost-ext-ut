@@ -2,7 +2,7 @@
 project: boost-ext
 name: libboost-ext-ut
 # temp +5 to supersede any potential updates to cppget package
-version: 2.0.1+9
+version: 2.0.1+10
 type: lib
 language: c++
 summary: C++ single header/single module, macro-free μ(micro)/Unit Testing Framework

@@ -5,7 +5,7 @@ impl_libs = # Implementation dependencies.
 lib{boost-ext-ut}: hxx{**} $impl_libs $intf_libs
 lib{boost-ext-ut}: mxx{**}: include = ($cxx.features.modules == true)
 
-modules_poption = ($cxx.features.modules == false ? -DBOOST_UT_DISABLE_MODULE : )
+modules_poption = ($cxx.features.modules ? -DBOOST_UT_ENABLE_MODULE : )
 
 # Build options.
 #
